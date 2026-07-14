@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { Layout } from './layout/layout';
-import { Products } from './layout/products/products';
-import { Cart } from './layout/cart/cart';
-import { Login } from './layout/login/login';
-import { Home } from './layout/home/home';
+import { MainLayout } from './layouts/main-layout/main-layout';
+import { Products } from './pages/products/products';
+import { Cart } from './pages/cart/cart';
+import { Login } from './pages/login/login';
+import { Home } from './pages/home/home';
 
 export const routes: Routes = [
     {
         path: '',
-        component: Layout,
+        component: MainLayout,
 
         children: [
             { path: 'home', component: Home },
