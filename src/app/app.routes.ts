@@ -1,21 +1,25 @@
 import { Routes } from '@angular/router';
-import { HomeLayout } from './component/home-layout/home-layout';
-import { Catalog } from './component/catalog/catalog';
+import { Layout } from './layout/layout';
+import { Products } from './layout/products/products';
+import { Cart } from './layout/cart/cart';
+import { Login } from './layout/login/login';
+import { Home } from './layout/home/home';
 
 export const routes: Routes = [
-
     {
         path: '',
-        component: HomeLayout,
+        component: Layout,
+
         children: [
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeLayout },
-            { path: 'cardapio', component: Catalog },
+            { path: 'home', component: Home },
+            { path: 'cardapio', component: Products },
+            { path: 'carrinho', component: Cart },
+            { path: 'login', component: Login },
         ]
     }, 
 
     {
-        path: '**',
+        path: '',
         redirectTo: 'home',
         pathMatch: 'full'
     }
