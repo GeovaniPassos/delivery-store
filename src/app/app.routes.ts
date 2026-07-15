@@ -6,6 +6,18 @@ import { Login } from './pages/login/login';
 import { Home } from './pages/home/home';
 
 export const routes: Routes = [
+    
+    {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
+
+    // caso a url não existir, ir para uma página de erro, ou para a home
+    // { 
+    //     path: '**', component: PageNotFoundComponent 
+    // },
+    
     {
         path: '',
         component: MainLayout,
@@ -16,11 +28,6 @@ export const routes: Routes = [
             { path: 'carrinho', component: Cart },
             { path: 'login', component: Login },
         ]
-    }, 
-
-    {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-    }
+    } 
+    
 ];
