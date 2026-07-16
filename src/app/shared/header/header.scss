@@ -1,0 +1,26 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.main-header {
+  padding: 0 6px;
+  position: relative;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9;
+
+  .title {
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 48px;
+    padding: 0 64px 0 8px;
+
+  }
+}
+
+.title:hover {
+  cursor: pointer;
+}
+

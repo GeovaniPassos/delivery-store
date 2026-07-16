@@ -1,18 +1,10 @@
-<header class="header">
-  <div class="logo">Pizza Express</div>
-  
-  <div class="botoes">
-    <button routerLink="/login">Login</button>
-    <!-- Quando clica no carrinho, o Angular muda a rota e desmonta esse layout inteiro -->
-    <button routerLink="/carrinho">🛒 Carrinho</button> 
-  </div>
-</header>
+<app-header />
+<main class="main-layout">
   <nav>
-    <a routerLink="/home">Home</a>
-    <a routerLink="/cardapio">Cardápio</a>
+   <a routerLink="/cardapio">Cardápio</a>
   </nav>
-
-<!-- O miolo dinâmico (Home, Cardápio ou Login) entra aqui embaixo -->
-<div class="conteudo-da-aba">
-  <router-outlet></router-outlet>
-</div>
+  <!-- O miolo dinâmico (Home, Cardápio ou Login) entra aqui embaixo -->
+  <div class="conteudo-da-aba">
+    <router-outlet></router-outlet>
+  </div>
+</main>
