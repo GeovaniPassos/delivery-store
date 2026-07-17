@@ -14,10 +14,10 @@ export class ProductsGrid {
   protected readonly products = signal<Products[]>([
     {
       id: 1,
-      name: 'Pizza Margherita',
+      name: 'Pizza Marguerita',
       description: 'Classic pizza with tomato sauce, mozzarella cheese, and fresh basil.',
       price: 39.99,
-      originalPrice: 59.99,
+      promotionalPrice: 59.99,
       category: 'Pizzas'
     },
     {
@@ -25,15 +25,14 @@ export class ProductsGrid {
       name: 'Pizza Pepperoni',
       description: 'Pizza with tomato sauce, mozzarella cheese, and pepperoni slices.',
       price: 44.99,
-      originalPrice: 64.99,
+      promotionalPrice: 64.99,
       category: 'Pizzas'
     },
     {
       id: 3,
-      name: 'Pizza Vegetarian',
+      name: 'Pizza Vegetariana',
       description: 'Pizza with tomato sauce, mozzarella cheese, and a variety of vegetables.',
       price: 49.99,
-      originalPrice: 69.99,
       category: 'Pizzas'
     }
   ]);
