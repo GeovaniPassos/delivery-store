@@ -2,14 +2,19 @@ import { Component, signal } from '@angular/core';
 import { ProductsCard } from '../products-card/products-card';
 import { Products } from '../../../models/products';
 import { MatIcon } from "@angular/material/icon";
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-products-grid',
-  imports: [ProductsCard, MatIcon],
+  imports: [ProductsCard, MatIcon, MatInputModule, MatFormFieldModule, FormsModule],
   templateUrl: './products-grid.html',
   styleUrl: './products-grid.scss',
 })
 export class ProductsGrid {
+
+  protected readonly searchTerm = signal('');
 
   protected readonly products = signal<Products[]>([
     {
