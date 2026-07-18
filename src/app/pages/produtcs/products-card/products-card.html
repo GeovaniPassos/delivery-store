@@ -8,15 +8,16 @@
   <mat-card-content>
 
     @if (product().promotionalPrice) {
-      <span class="promotional-price">Promoção</span>
+      <span class="sale-badge">Promoção</span>
 
       <p class="price-row">
-        <span class="price">R$ {{ product().price }}</span>
-        <span class="promotional-price">R$ {{ product().promotionalPrice }}</span>
+        <span class="price">{{ product().price }}</span>
+        <span class="promotional-price">{{ product().promotionalPrice }}</span>
       </p>
     } @else {
       <p class="price-row">
-        <span class="price">R$ {{ product().price }}</span>
+        <span class="price">{{ product().price }}</span>
+
       </p>
     }
 
