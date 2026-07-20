@@ -2,8 +2,16 @@
     <button matButton routerLink="/home">
         Pizza Express
     </button>
+
+
+    <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Pesquisar produtos</mat-label>
+        <input matInput class="input-filter" placeholder="Pesquise o nome do produto" 
+         /* [(ngModel)]="searchTerm"*/
+         />
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field> 
     
-    <span class="spacer"></span>
     
     <button matButton routerLink="/carrinho">
         <mat-icon aria-hidden="false" aria-label="icon-store" fontIcon="shopping_cart"></mat-icon>

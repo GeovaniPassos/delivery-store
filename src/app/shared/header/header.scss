@@ -3,6 +3,7 @@
 }
 
 .main-header {
+  display: flex;
   padding: 0 6px;
   position: relative;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
@@ -18,9 +19,19 @@
     padding: 0 64px 0 8px;
 
   }
+
+  
+}
+
+.search-field {
+  width: 100%;
+  max-width: 300px;
+  }
+
+.input-filter {
+  width: 100%;
 }
 
 .title:hover {
   cursor: pointer;
 }
-
