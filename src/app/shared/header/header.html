@@ -1,22 +1,19 @@
 <mat-toolbar class="main-header">
-    <button matButton routerLink="/home">
+    <h1 routerLink="/home" class="logo">
         Pizza Express
-    </button>
+    </h1>
 
+    <app-search-filter />
+    
+    <div class="spacer"></div>
 
-    <mat-form-field appearance="outline" class="search-field">
-        <mat-label>Pesquisar produtos</mat-label>
-        <input matInput class="input-filter" placeholder="Pesquise o nome do produto" 
-         /* [(ngModel)]="searchTerm"*/
-         />
-        <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field> 
-    
-    
-    <button matButton routerLink="/carrinho">
-        <mat-icon aria-hidden="false" aria-label="icon-store" fontIcon="shopping_cart"></mat-icon>
-    </button>
-    <button matButton routerLink="/login">
-        <mat-icon aria-hidden="false" aria-label="icon-store" fontIcon="account_circle"></mat-icon> 
-    </button>
+    <div class="actions">
+        <button mat-icon-button routerLink="/carrinho" class="cart-button">
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+
+        <button mat-icon-button routerLink="/login" class="login-button">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+    </div>
 </mat-toolbar>

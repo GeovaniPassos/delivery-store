@@ -3,16 +3,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink } from "@angular/router";
-import { MatFormField, MatLabel } from "@angular/material/input";
+import { SearchFilter } from "../search-filter/search-filter";
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, 
-    MatToolbarModule, 
-    MatButtonModule, 
-    MatFormField, 
-    MatLabel, 
-    MatIconModule],
+  imports: [RouterLink,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule, SearchFilter],
     
   templateUrl: './header.html',
   styleUrl: './header.scss',
