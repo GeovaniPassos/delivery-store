@@ -5,6 +5,8 @@ import { MatIcon } from "@angular/material/icon";
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
+import { SearchFilter } from '../../../shared/search-filter/search-filter';
+import { SearchService } from '../../../services/searchService/search-service';
 
 @Component({
   selector: 'app-products-grid',
@@ -14,7 +16,9 @@ import {FormsModule} from '@angular/forms';
 })
 export class ProductsGrid {
 
-  protected readonly searchTerm = signal('');
+  constructor(
+    public searchService: SearchService
+  ){}
 
   protected readonly products = signal<Products[]>([
     {

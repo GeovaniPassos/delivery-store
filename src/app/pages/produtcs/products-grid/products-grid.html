@@ -1,5 +1,9 @@
 <div class="products-container">
 
+    <p class="search-preview">
+        Você pesquisou por: 
+        <span class="search-term">{{ searchService.search() }}</span></p>
+
     <div class="products-grid">
         @for (product of products(); track product.id) {
             <app-products-card [product]="product" />

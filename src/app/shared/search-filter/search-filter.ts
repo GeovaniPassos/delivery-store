@@ -3,6 +3,7 @@ import { MatFormField, MatLabel, MatInput, MatInputModule } from "@angular/mater
 import { MatIcon } from "@angular/material/icon";
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SearchService } from '../../services/searchService/search-service';
 
 @Component({
   selector: 'app-search-filter',
@@ -14,9 +15,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './search-filter.scss',
 })
 export class SearchFilter {
-  searchTerm: string = '';
 
-  onSearch() {
-    console.log('Search term:', this.searchTerm);
+  constructor(
+      public searchService: SearchService
+    ){}
+
+  searchTerm: string = '';
+  
+
+  onSearch(searchTerm: string) {
+    this.searchService.search.set(searchTerm)
   }
 }
