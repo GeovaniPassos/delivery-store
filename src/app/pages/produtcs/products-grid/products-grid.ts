@@ -57,4 +57,8 @@ export class ProductsGrid {
     );
   });
 
+  protected onAddToCard(product: Products) {
+    console.log("Produto adicionado: " + product.name)
+  }
+
 }
