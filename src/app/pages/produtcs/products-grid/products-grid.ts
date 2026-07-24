@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { ProductsCard } from '../products-card/products-card';
 import { Products } from '../../../models/products';
 import { MatIcon } from "@angular/material/icon";
@@ -20,6 +20,7 @@ export class ProductsGrid {
     public searchService: SearchService
   ){}
 
+  //Produtos exemplo
   protected readonly products = signal<Products[]>([
     {
       id: 1,
@@ -45,5 +46,15 @@ export class ProductsGrid {
       category: 'Pizzas'
     }
   ]);
+
+  protected readonly filteredProducts = computed(() => {
+    const term = this.searchService.search().toLocaleLowerCase().trim();
+    if (!term) return this.products();
+
+    return this.products().filter((product) => 
+      product.name.toLocaleLowerCase().includes(term) ||
+      product.description.toLocaleLowerCase().includes(term)
+    );
+  });
 
 }
