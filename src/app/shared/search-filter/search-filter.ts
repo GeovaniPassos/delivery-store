@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatFormField, MatLabel, MatInput, MatInputModule } from "@angular/material/input";
 import { MatIcon } from "@angular/material/icon";
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { SearchService } from '../../services/searchService/search-service';
+import { SearchService } from '../../services/search-service/search-service';
 
 @Component({
   selector: 'app-search-filter',
@@ -16,9 +16,7 @@ import { SearchService } from '../../services/searchService/search-service';
 })
 export class SearchFilter {
 
-  constructor(
-      public searchService: SearchService
-    ){}
+  private searchService = inject(SearchService);
 
   searchTerm: string = '';
   

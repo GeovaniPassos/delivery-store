@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { ProductsCard } from '../products-card/products-card';
 import { Products } from '../../../models/products';
 import { MatIcon } from "@angular/material/icon";
@@ -6,7 +6,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { SearchFilter } from '../../../shared/search-filter/search-filter';
-import { SearchService } from '../../../services/searchService/search-service';
+import { SearchService } from '../../../services/search-service/search-service';
+import { CartService } from '../../../services/cart-service/cart-service';
 
 @Component({
   selector: 'app-products-grid',
@@ -16,9 +17,8 @@ import { SearchService } from '../../../services/searchService/search-service';
 })
 export class ProductsGrid {
 
-  constructor(
-    public searchService: SearchService
-  ){}
+  private searchService = inject(SearchService);
+  private cartService = inject(CartService);
 
   //Produtos exemplo
   protected readonly products = signal<Products[]>([
@@ -58,7 +58,6 @@ export class ProductsGrid {
   });
 
   protected onAddToCard(product: Products) {
-    console.log("Produto adicionado: " + product.name)
+    this.cartService.addToCart(product);
   }
-
 }

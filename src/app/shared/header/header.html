@@ -9,7 +9,9 @@
 
     <div class="actions">
         <button mat-icon-button routerLink="/carrinho" class="cart-button">
-            <mat-icon>shopping_cart</mat-icon>
+            <mat-icon [matBadge]="cartService.totalItems()" 
+            [matBadgeHidden]="cartService.totalItems() === 0"
+            >shopping_cart</mat-icon>
         </button>
 
         <button mat-icon-button routerLink="/login" class="login-button">
