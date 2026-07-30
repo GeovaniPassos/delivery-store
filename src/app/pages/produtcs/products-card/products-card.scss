@@ -1,37 +1,41 @@
+/* O card empilha o header e o footer */
 .product-card {
-    height: 100%;
-    display: flex;  
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px; /* Mantém o tamanho padrão nos cards da listagem */
+  padding: 16px; /* Ajusta o espaçamento interno geral */
 }
 
+/* Garante que o header ocupe o topo */
+mat-card-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto; /* Empurra tudo que está abaixo para o fim do card */
+}
+
+/* Alinha o preço e o botão lado a lado nas extremidades */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinha o preço e botão verticalmente no meio */
+  width: 100%;
+}
+
+/* Remove margens e paddings padrões do Angular Material que quebram o alinhamento */
 mat-card-content {
-    flex: 1;
+  padding: 0 !important;
+  margin: 0;
 }
 
-.sale-badge {
-    display: inline-block;
-    margin-right: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--mat-sys-on-primary);
-    background: var(--mat-sys-primary);
+mat-card-actions {
+  padding: 0 !important;
+  margin: 0;
 }
 
-.price {
-    color: var(--mat-sys-primary);
-    font-weight: 600;
-}
-
+/* Estilo opcional para organizar a linha do preço */
 .price-row {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    margin: 20px 0 0.75rem;
-}
-
-.promotional-price {
-    color: var(--mat-sys-on-surface-variant);
-    text-decoration: line-through;
+  display: flex;
+  gap: 8px;
+  margin: 0;
 }

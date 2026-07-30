@@ -24,26 +24,26 @@ export class ProductsGrid {
   protected readonly products = signal<Products[]>([
     {
       id: 1,
-      name: 'Pizza Marguerita',
-      description: 'Classic pizza with tomato sauce, mozzarella cheese, and fresh basil.',
-      price: 39.99,
-      promotionalPrice: 59.99,
-      category: 'Pizzas'
+      name: 'Refrigerante',
+      description: 'Refrigerante gelado',
+      price: 10.99,
+      promotionalPrice: 8.99,
+      category: 'Bebidas'
     },
     {
-      id: 2,
-      name: 'Pizza Pepperoni',
-      description: 'Pizza with tomato sauce, mozzarella cheese, and pepperoni slices.',
-      price: 44.99,
-      promotionalPrice: 64.99,
-      category: 'Pizzas'
+      id: 1,
+      name: 'Cerveja',
+      description: 'Cerveja gelada.',
+      price: 12.99,
+      promotionalPrice: 10.99,
+      category: 'Bebidas'
     },
     {
-      id: 3,
-      name: 'Pizza Vegetariana',
-      description: 'Pizza with tomato sauce, mozzarella cheese, and a variety of vegetables.',
-      price: 49.99,
-      category: 'Pizzas'
+      id: 1,
+      name: 'Suco',
+      description: 'Suco gelado',
+      price: 8.99,
+      category: 'Bebidas'
     }
   ]);
 
