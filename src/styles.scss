@@ -37,4 +37,27 @@ body {
   // Reset the user agent margin.
   margin: 0;
   height: 100%;
+
+  // Define a lista exata de fontes monoespaçadas
+$mono-font-stack: 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+
+// Cria o tema aplicando a lista às propriedades de texto
+$my-custom-theme: mat.define-theme((
+  typography: (
+    plain-family: $mono-font-stack,
+    brand-family: $mono-font-stack
+  )
+));
+
+// Aplica a tipografia do tema globalmente nos componentes do Material
+:root {
+  @include mat.all-component-typographies($my-custom-theme);
+}
+
+// Força os elementos HTML nativos a usarem a mesma fonte
+html, body {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  margin: 0;
+  height: 100%;
+}
 }

@@ -1,19 +1,22 @@
 <mat-card class="product-card">
 
+  <div class="product-icon">
+    <mat-icon aria-hidden="false">fastfood</mat-icon>
+  </div>
+
   <mat-card-header>
     <mat-card-title>{{ product().name }}</mat-card-title>
     <p class="description">{{ product().description }}</p>
   </mat-card-header>
   
-  <!-- Container flex que agrupa o preço (esquerdo) e o botão (direito) -->
   <div class="card-footer">
     
     <mat-card-content>
       @if (product().promotionalPrice) {
         <span class="sale-badge">Promoção</span>
         <p class="price-row">
-          <span class="price">{{ product().price }}</span>
-          <span class="promotional-price">{{ product().promotionalPrice }}</span>
+          <span class="price">{{ product().promotionalPrice }}</span>
+          <span class="promotional-price">{{ product().price }}</span>
         </p>
       } @else {
         <p class="price-row">
@@ -23,7 +26,12 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-button (click)="onAddToCard()"> {{ addButtonLabel() }} </button>
+      <!-- <button mat-button (click)="onAddToCard()"> {{ addButtonLabel() }} </button> -->
+       <button mat-icon-button class="cart-button" (click)="onAddToCard()">
+            <mat-icon 
+            aria-hidden="false"
+            >add</mat-icon>
+        </button>
     </mat-card-actions>
 
   </div>

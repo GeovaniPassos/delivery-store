@@ -1,25 +1,49 @@
 /* O card empilha o header e o footer */
+:host ::ng-deep .mat-card-header {
+  margin: 0px !important; /* Zera a margem laranja oculta */
+  padding: 0px !important;
+}
+
 .product-card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 220px; /* Mantém o tamanho padrão nos cards da listagem */
-  padding: 16px; /* Ajusta o espaçamento interno geral */
+  flex-direction: row;
+  margin: 0%;
+}
+
+.product-icon {
+  align-items: center;
+  margin: 10px;
 }
 
 /* Garante que o header ocupe o topo */
 mat-card-header {
-  display: flex;
+  width: auto;
   flex-direction: column;
-  margin-bottom: auto; /* Empurra tudo que está abaixo para o fim do card */
+  padding: 0px;
+  height: 100%;
+  flex: 1;
+}
+
+mat-card-header > * {
+  flex: 1;
+}
+
+mat-card-title {
+  font-size: 1.3rem;
+}
+
+.description {
+  display: block;
+  width: auto;
+  margin: 0%;
+  color: gray;
+  font-size: 0.8rem;
 }
 
 /* Alinha o preço e o botão lado a lado nas extremidades */
 .card-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center; /* Alinha o preço e botão verticalmente no meio */
-  width: 100%;
+  align-items: center; 
 }
 
 /* Remove margens e paddings padrões do Angular Material que quebram o alinhamento */
@@ -38,4 +62,14 @@ mat-card-actions {
   display: flex;
   gap: 8px;
   margin: 0;
+}
+
+.price {
+  color: var(--mat-sys-primary);
+  font-weight: 500;
+}
+
+.promotional-price {
+  color: var(--mat-sys-on-surface-variant);
+  text-decoration: line-through;
 }
