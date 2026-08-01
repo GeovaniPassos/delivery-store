@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import { SearchFilter } from '../../../shared/search-filter/search-filter';
 import { SearchService } from '../../../services/search-service/search-service';
 import { CartService } from '../../../services/cart-service/cart-service';
+import { ProductService } from '../../../services/product-service/product-service';
 
 @Component({
   selector: 'app-products-grid',
@@ -19,39 +20,13 @@ export class ProductsGrid {
 
   private searchService = inject(SearchService);
   private cartService = inject(CartService);
-
-  //Produtos exemplo
-  protected readonly products = signal<Products[]>([
-    {
-      id: 1,
-      name: 'Refrigerante',
-      description: 'Refrigerante gelado',
-      price: 10.99,
-      promotionalPrice: 8.99,
-      category: 'Bebidas'
-    },
-    {
-      id: 1,
-      name: 'Cerveja',
-      description: 'Cerveja gelada.',
-      price: 12.99,
-      promotionalPrice: 10.99,
-      category: 'Bebidas'
-    },
-    {
-      id: 1,
-      name: 'Suco',
-      description: 'Suco gelado',
-      price: 8.99,
-      category: 'Bebidas'
-    }
-  ]);
+  private productService = inject(ProductService);
 
   protected readonly filteredProducts = computed(() => {
     const term = this.searchService.search().toLocaleLowerCase().trim();
-    if (!term) return this.products();
+    if (!term) return this.productService.products();
 
-    return this.products().filter((product) => 
+    return this.productService.products().filter((product) =>
       product.name.toLocaleLowerCase().includes(term) ||
       product.description.toLocaleLowerCase().includes(term)
     );

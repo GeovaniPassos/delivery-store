@@ -10,6 +10,10 @@
   margin: 0%;
 }
 
+p {
+  margin-bottom: 10px;
+}
+
 .product-icon {
   align-items: center;
   margin: 10px;
@@ -20,8 +24,8 @@ mat-card-header {
   width: auto;
   flex-direction: column;
   padding: 0px;
-  height: 100%;
   flex: 1;
+  padding-top: 6px;
 }
 
 mat-card-header > * {
@@ -29,11 +33,12 @@ mat-card-header > * {
 }
 
 mat-card-title {
+  align-items: baseline;
   font-size: 1.3rem;
+  margin-bottom: -6px;
 }
 
 .description {
-  display: block;
   width: auto;
   margin: 0%;
   color: gray;
@@ -43,7 +48,7 @@ mat-card-title {
 /* Alinha o preço e o botão lado a lado nas extremidades */
 .card-footer {
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 /* Remove margens e paddings padrões do Angular Material que quebram o alinhamento */
