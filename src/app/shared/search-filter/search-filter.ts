@@ -19,9 +19,8 @@ export class SearchFilter {
   private searchService = inject(SearchService);
 
   searchTerm: string = '';
-  
 
   onSearch(searchTerm: string) {
-    this.searchService.search.set(searchTerm)
+    this.searchService.setTerm(searchTerm);
   }
 }

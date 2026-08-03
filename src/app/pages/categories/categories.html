@@ -1,5 +1,5 @@
 <div class="categories-list">
   @for ( cat of productService.categories(); track cat) {
-    <button class="tag-button">{{ cat }}</button>
+    <button class="tag-button" (click)="onCategoryClick(cat)">{{ cat }}</button>
   }
 </div>
