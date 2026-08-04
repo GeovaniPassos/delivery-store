@@ -22,4 +22,10 @@ export class ProductsGrid {
   protected onAddToCard(product: Products) {
     this.cartService.addToCart(product);
   }
+
+  protected productsFiltreded() {
+    const list = this.productService.filteredProducts();
+    
+    
+  }
 }

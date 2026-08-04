@@ -12,6 +12,9 @@
   <div class="card-footer">
     
     <mat-card-content>
+      @if (productService.isSearching()) {
+                <span class="product-category-badge">{{ product().category }}</span>
+            }
       @if (product().promotionalPrice) {
         <span class="sale-badge">Promoção</span>
         <p class="price-row">

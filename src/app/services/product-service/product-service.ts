@@ -37,7 +37,7 @@ export class ProductService {
     },
     {
       id: 4,
-      name: 'x-burguer',
+      name: 'X-burguer',
       description: 'Pão, hamburgue, mussarela',
       price: 18.99,
       category: 'Lanches'
@@ -50,6 +50,10 @@ export class ProductService {
       category: 'Pizzas'
     }
   ]);
+
+  public isSearching = computed(() => {
+    return this.searchService.search().trim().length > 0;
+  });
 
   public categories = computed(() => {
     const categoriesList = this.products().map(p => p.category);

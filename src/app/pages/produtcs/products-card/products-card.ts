@@ -1,8 +1,9 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { Products } from '../../../models/products';
+import { ProductService } from '../../../services/product-service/product-service';
 
 @Component({
   selector: 'app-products-card',
@@ -14,6 +15,9 @@ import { Products } from '../../../models/products';
 export class ProductsCard {
 
   readonly product = input.required<Products>();
+
+  readonly productService = inject(ProductService);
+
   readonly addButtonLabel = input('Adicionar ao carrinho');
 
   readonly addToCart = output<Products>();

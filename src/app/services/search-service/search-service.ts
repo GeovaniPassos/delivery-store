@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 export class SearchService {
 
     private routes = inject(Router);
-    
 
     search = signal('');
 
