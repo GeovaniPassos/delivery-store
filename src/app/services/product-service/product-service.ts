@@ -56,6 +56,8 @@ export class ProductService {
     }
   ]);
 
+  public categoryClick = false;
+
   public isSearching = computed(() => {
     return this.searchService.search().trim().length > 0;
   });
@@ -67,6 +69,7 @@ export class ProductService {
 
   setCategory(category: string | null) {
     this.selectedCategory.set(category);
+    this.categoryClick = true;
   }
 
   filteredProducts = computed(() => {
