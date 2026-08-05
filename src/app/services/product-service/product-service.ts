@@ -18,7 +18,8 @@ export class ProductService {
       description: 'Refrigerante gelado',
       price: 10.99,
       promotionalPrice: 8.99,
-      category: 'Bebidas'
+      category: 'Bebidas',
+      type: 'simple'
     },
     {
       id: 2,
@@ -26,28 +27,32 @@ export class ProductService {
       description: 'Cerveja gelada.',
       price: 12.99,
       promotionalPrice: 10.99,
-      category: 'Bebidas'
+      category: 'Bebidas',
+      type: 'simple'
     },
     {
       id: 3,
       name: 'Suco',
       description: 'Suco gelado',
       price: 8.99,
-      category: 'Sucos'
+      category: 'Sucos',
+      type: 'simple'
     },
     {
       id: 4,
       name: 'X-burguer',
       description: 'Pão, hamburgue, mussarela',
       price: 18.99,
-      category: 'Lanches'
+      category: 'Lanches',
+      type: 'simple'
     },
     {
       id: 5,
       name: 'Mussarela',
       description: 'Molho, mussarela e mangericão',
       price: 48.99,
-      category: 'Pizzas'
+      category: 'Pizzas',
+      type: 'pizza'
     }
   ]);
 
@@ -78,11 +83,11 @@ export class ProductService {
     }
 
     if (category) {
-      return result = result.filter((product) => 
+      return result = result.filter((product) =>
         product.category === category);
     }
-    
+
     return result;
   });
-  
+
 }

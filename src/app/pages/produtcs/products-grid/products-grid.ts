@@ -19,13 +19,28 @@ export class ProductsGrid {
   private cartService = inject(CartService);
   protected productService = inject(ProductService);
 
+  products = this.productService.filteredProducts;
+
   protected onAddToCard(product: Products) {
     this.cartService.addToCart(product);
   }
 
-  protected productsFiltreded() {
-    const list = this.productService.filteredProducts();
-    
-    
+  onProductClick(product: Products) {
+    console.log("Clicked product: " + product.name);
+
+    if (product.type === 'pizza') {
+      this.openPizzaModal(product);
+    } else {
+      this.openDefaultModal(product);
+    }
   }
+
+  openPizzaModal(product: Products) {
+    console.log("pizza modal");
+  }
+
+  openDefaultModal(product: Products) {
+    console.log("default modal ");
+  }
+
 }
