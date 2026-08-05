@@ -2,10 +2,10 @@
 
     <div class="products-grid">
         @for (product of this.productService.filteredProducts() ; track product.id) {
-
+            
             @if (product.type === 'pizza') {
-              (click)="openPizzaModal(product)"
-              ADICIONAR A ABERTURA DO MODAL ) app-modal-pizza
+                <app-pizza-modal />
+              
 
             } @else {
               <app-products-card [product]="product"

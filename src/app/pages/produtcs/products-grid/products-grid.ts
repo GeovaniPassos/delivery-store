@@ -2,15 +2,16 @@ import { Component,  inject } from '@angular/core';
 import { ProductsCard } from '../products-card/products-card';
 import { Products } from '../../../models/products';
 import { MatIcon } from "@angular/material/icon";
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 import { CartService } from '../../../services/cart-service/cart-service';
 import { ProductService } from '../../../services/product-service/product-service';
+import { PizzaModal } from '../../../shared/pizza-modal/pizza-modal';
 
 @Component({
   selector: 'app-products-grid',
-  imports: [ProductsCard, MatIcon, MatInputModule, MatFormFieldModule, FormsModule],
+  imports: [ProductsCard, MatIcon, MatInputModule, MatFormFieldModule, FormsModule, PizzaModal],
   templateUrl: './products-grid.html',
   styleUrl: './products-grid.scss',
 })
@@ -36,7 +37,8 @@ export class ProductsGrid {
   }
 
   openPizzaModal(product: Products) {
-    console.log("pizza modal");
+    const pizzaModal = new PizzaModal();
+    pizzaModal.renderModal();
   }
 
   openDefaultModal(product: Products) {
