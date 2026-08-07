@@ -1,16 +1,12 @@
-import { Component, effect, input } from '@angular/core';
-import { Products } from '../../models/products';
+import { Component } from '@angular/core';
+import { MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle } from "@angular/material/expansion";
 
 @Component({
   selector: 'app-default-modal',
-  imports: [],
+  imports: [MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle],
   templateUrl: './default-modal.html',
   styleUrl: './default-modal.scss',
 })
 export class DefaultModal {
-
-  loadOpcionais(productId: number) {
-    console.log(`Carregando opcionais para o produto com ID: ${productId}`);
-  }
 
 }
