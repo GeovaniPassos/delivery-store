@@ -1,6 +1,7 @@
 import { Component, computed, inject, } from '@angular/core';
 import { ProductService } from '../../services/product-service/product-service';
 import { Router } from '@angular/router';
+import { Products } from '../../models/products';
 
 @Component({
   selector: 'app-categories',
@@ -16,7 +17,6 @@ export class Categories {
 
   onCategoryClick(cat: string) {
     this.productService.setCategory(cat);
-
     this.routes.navigate(['/produtos']);
   }
 }

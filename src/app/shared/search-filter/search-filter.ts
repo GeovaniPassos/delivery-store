@@ -16,7 +16,7 @@ import { SearchService } from '../../services/search-service/search-service';
 })
 export class SearchFilter {
 
-  private searchService = inject(SearchService);
+  protected searchService = inject(SearchService);
 
   searchTerm: string = '';
 

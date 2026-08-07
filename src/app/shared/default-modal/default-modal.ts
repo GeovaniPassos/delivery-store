@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, effect, input } from '@angular/core';
+import { Products } from '../../models/products';
 
 @Component({
   selector: 'app-default-modal',
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './default-modal.html',
   styleUrl: './default-modal.scss',
 })
-export class DefaultModal {}
+export class DefaultModal {
+
+  loadOpcionais(productId: number) {
+    console.log(`Carregando opcionais para o produto com ID: ${productId}`);
+  }
+
+}

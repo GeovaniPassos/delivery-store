@@ -2,9 +2,10 @@
 
   <input class="search-input"
     [(ngModel)]="searchTerm"
+    [value]="searchService.search()"
     type="text"
     placeholder="Pesquisar produtos" 
-    (input)="onSearch(searchTerm)"
+    (input)="onSearch($any($event.target).value)"
     >
     
 </div>

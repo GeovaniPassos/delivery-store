@@ -4,14 +4,10 @@
         @for (product of this.productService.filteredProducts() ; track product.id) {
             @if (this.productService.categoryClick == true && 
             product.type == 'pizza') {
-
-                
-                // ajustar em um metodo para mostrar o modal correto
                 <app-pizza-modal />
             } @else {
-
                 <app-products-card [product]="product"
-                (click)="onProductClick(product)"
+                (click)="this.categoryService.selectedProductClick(product)"
                 (addToCart)="this.onAddToCard($event)"/>
 
             }
@@ -23,6 +19,5 @@
                 <p>Volte mais tarde para verificar se há novidades.</p>
             </div>
         }
-
     </div>
 </div>

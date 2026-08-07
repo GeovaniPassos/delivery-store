@@ -10,6 +10,7 @@ export class ProductService {
 
   private searchService = inject(SearchService);
   selectedCategory = signal<string | null>(null);
+  selectedProduct = signal<Products | null>(null);
 
   public readonly products = signal<Products[]>([
     {
@@ -59,12 +60,13 @@ export class ProductService {
   public categoryClick = false;
 
   public isSearching = computed(() => {
+    this.categoryClick = false;
     return this.searchService.search().trim().length > 0;
   });
 
   public categories = computed(() => {
     const categoriesList = this.products().map(p => p.category);
-      return Array.from(new Set(categoriesList));
+    return Array.from(new Set(categoriesList));
   });
 
   setCategory(category: string | null) {
@@ -92,5 +94,9 @@ export class ProductService {
 
     return result;
   });
+
+  selectedProductClick(product: Products) {
+    this.selectedProduct.set(product);
+  }
 
 }

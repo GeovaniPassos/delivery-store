@@ -1,4 +1,4 @@
-import { computed, inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -16,5 +16,9 @@ export class SearchService {
         if (term != '') {
             this.routes.navigate(['/produtos']);
         }
+    }
+
+    clearSearch() {
+        this.search.set('');
     }
 }

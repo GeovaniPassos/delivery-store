@@ -4,6 +4,9 @@ import { Cart } from './pages/cart/cart';
 import { Login } from './pages/login/login';
 import { Home } from './pages/home/home';
 import { ProductsGrid } from './pages/produtcs/products-grid/products-grid';
+import { PizzaModal } from './shared/pizza-modal/pizza-modal';
+import { DefaultModal } from './shared/default-modal/default-modal';
+import { ComboModal } from './shared/combo-modal/combo-modal';
 
 export const routes: Routes = [
     
@@ -27,6 +30,9 @@ export const routes: Routes = [
             { path: 'produtos', component: ProductsGrid },
             { path: 'carrinho', component: Cart },
             { path: 'login', component: Login },
+            { path: 'pizzas', component: PizzaModal },
+            { path: 'combos', component: ComboModal },
+            { path: 'opcionais', component: DefaultModal },
         ]
     } 
     
