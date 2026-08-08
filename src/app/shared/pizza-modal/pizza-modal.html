@@ -1,22 +1,74 @@
-<mat-accordion>
-  <mat-expansion-panel>
+<mat-accordion class="assemble-pizza">
+  <mat-expansion-panel [expanded]="step() === 0" (opened)="setStep(0)" hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>Tamanho</mat-panel-title>
+      <mat-panel-description>
+        Selecione um tamanho de pizza.
+        <div class="space-between"></div>
+        <mat-icon>straighten</mat-icon>
+      </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>Pequena, Média, Grande</p>
+
+    <section class="size-pizza">
+      <mat-radio-group>
+        <mat-radio-button class="example-margin" value="small">Pequena</mat-radio-button>
+        <mat-radio-button class="example-margin" value="Medium">Média</mat-radio-button>
+        <mat-radio-button class="example-margin" value="Large">Grande</mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <mat-action-row>
+      <button matButton (click)="nextStep()">Próximo</button>
+    </mat-action-row>
+
   </mat-expansion-panel>
 
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="step() === 1" (opened)="setStep(1)" hideToggle>
+
+    <mat-expansion-panel-header>
+      <mat-panel-title>Partes de sabores</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <section class="amount-pizza">
+      <mat-radio-group>
+        <mat-radio-button class="example-margin" value="one">1</mat-radio-button>
+        <mat-radio-button class="example-margin" value="two">2</mat-radio-button>
+        <mat-radio-button class="example-margin" value="tree">3</mat-radio-button>
+        <mat-radio-button class="example-margin" value="four">3</mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <mat-action-row>
+      <button matButton (click)="prevStep()">Anterior</button>
+      <button matButton (click)="nextStep()">Próximo</button>
+    </mat-action-row>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step() === 2" (opened)="setStep(2)" hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>Sabores</mat-panel-title>
     </mat-expansion-panel-header>
-    <p>Margherita, Calabresa, Frango com Catupiry</p>
+
+    @for (product of this.productService.filteredProducts() ; track product.id) {
+      <app-products-card [product]="product" />
+    }
+
+    <mat-action-row>
+      <button matButton (click)="prevStep()">Anterior</button>
+      <button matButton (click)="nextStep()">Próximo</button>
+    </mat-action-row>
   </mat-expansion-panel>
 
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="step() === 3" (opened)="setStep(3)" hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>Bordas</mat-panel-title>
     </mat-expansion-panel-header>
     <p>Tradicional, Catupiry, Cheddar</p>
+
+    <mat-action-row>
+      <button matButton (click)="prevStep()">Anterior</button>
+      <button matButton (click)="nextStep()">Próximo</button>
+    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
